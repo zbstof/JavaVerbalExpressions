@@ -27,7 +27,6 @@ public class VerbalExpression {
             put('m', Pattern.MULTILINE);
             put('s', Pattern.DOTALL);
             put('u', Pattern.UNICODE_CASE);
-            put('U', Pattern.UNICODE_CHARACTER_CLASS);
         }};
 
         /**
@@ -730,7 +729,7 @@ public class VerbalExpression {
      * @return list of extracted groups
      */
     public List<String> getTextGroups(final String toTest, final int group) {
-        List<String> groups = new ArrayList<>();
+        List<String> groups = new ArrayList<String>();
         Matcher m = pattern.matcher(toTest);
         while (m.find()) {
             groups.add(m.group(group));
